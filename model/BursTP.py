@@ -287,10 +287,9 @@ class BursTP(pl.LightningModule):
         regress_pre = torch.cat([o['regress_pre'] for o in outputs])
         regresses = torch.cat([o['regresses'] for o in outputs])
         acc = accuracy(preds=class_pre.softmax(-1), target=classes, top_k=1, task="multiclass", num_classes=self.classes)
-        mse = mean_squared_error(preds=regress_pre, target=regresses)
         f1 = f1_score(preds=class_pre.softmax(-1), target=classes, task="multiclass", num_classes=self.classes, average="weighted")
         pc = precision(preds=class_pre, target=classes, task="multiclass", average='weighted', num_classes=self.classes)
-        self.log_dict({'test_acc': acc, 'test_mse': mse, 'f1': f1, 'precision': pc})
+        self.log_dict({'acc': acc, 'f1': f1, 'precision': pc})
 
     @staticmethod
     def setting_model_args(parent_parser):
