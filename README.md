@@ -1,5 +1,5 @@
 # BursTP
-A Deep Burst Time Prediction Framework for Information Diffusion in Social Networks
+BursTP: Burst Time Prediction Service for Information Diffusion in Social Networks
 
 ## Description
 Our BursTP is implemented mainly based on the following libraries (see the README file in source code folder for more details):
@@ -76,4 +76,4 @@ python train.py
 
 ### Experiment Settings
 
-Please refer to sections 5.1.1 and 5.1.3 of the paper for details on data and parameter settings.
+Please refer to sections V.A and V.C of the paper for details on data and parameter settings.
